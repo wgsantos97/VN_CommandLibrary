@@ -1,0 +1,6 @@
+narrator "Northern Training Fields." transCinematic(null,slides)
+Saoirse "Alright, people. Let's go over basics."
+Saoirse "Your troops move on your turn and the enemy troops move on theirs. {wa 1}Simple, yeah?"
+Saoirse "When you're done moving, you can press the 'End' button on the upper left corner, near the turn counter, or hit the 'E' key."
+Saoirse "For now, we'll take it nice and easy. Move your pikemen towards the training dummies and attack them."
+exit(Saoirse) startGame() playMusic(1-Blue_Radiance)
