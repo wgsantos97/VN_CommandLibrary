@@ -13,7 +13,22 @@ This system boasted a basic scripting language that allowed a person to feed the
 
 ## Problem
 
-The original VN system was very robust and very flexible. However, I did not like how it parsed functions through HandleAction (NovelController:263). Originally, it used a switch statement that cycled through string names which corresponded to functions defined in the NovelController.
+The original VN system was very robust and very flexible. However, I did not like how it parsed functions through HandleAction (NovelController(Original):445). Originally, it used a large switch statement that cycled through string names which corresponded to functions defined in the NovelController.
+
+```csharp
+public void HandleAction(string action){
+    string[] data = action.Split('(',')');
+    switch(data[0]) {
+        case "enter":
+            Command_Enter(data[1]);
+            break;
+        case "exit":
+            Command_Exit(data[1]);
+            break;
+        ...
+    }
+}
+```
 
 There were 2 main reasons why I did not like it:
 
