@@ -2,22 +2,26 @@
 
 ## Intro
 
-Over the summer, I followed a YouTube series about the creation of a Unity Visual Novel System.
+Over the summer, I followed a YouTube series about the creation of a Unity Visual Novel System. I wanted to integrate it with my Fire Emblem game project so that I could have some form of dialogue.
 
-Link: <https://www.youtube.com/playlist?list=PLGSox0FgA5B7mApF1vhbspLj5NpzKedU6>
+* Visual Novel Playlist Link: <https://www.youtube.com/playlist?list=PLGSox0FgA5B7mApF1vhbspLj5NpzKedU6>
+* Fire Emblem Project: <https://sharemygame.com/@wsan/frozen-embers>
 
 This system boasted a basic scripting language that allowed a person to feed the game a formatted textfile that the System could read and parse (see sample.txt). It also allowed for the inclusion of functions to add even greater flexiblity.
 
+> This is a small part of the very large codebase that was the Fire Emblem Project.
+
 ## Problem
 
-The system was very robust and very flexible. However, I did not like how it parsed functions through HandleAction (NovelController:263). Originally, it used a switch statement that cycled through string names which corresponded to functions defined in the NovelController.
+The original VN system was very robust and very flexible. However, I did not like how it parsed functions through HandleAction (NovelController:263). Originally, it used a switch statement that cycled through string names which corresponded to functions defined in the NovelController.
 
 There were 2 main reasons why I did not like it:
 
 * It scales poorly.
   * I have to add a new switch case and ensure it maps to the correct function every time.
     * If I add a new function and forget to add the case, I'll get a runtime error at best.
-  * I have to look at TWO places when I add new functionality, instead of the ONE place that I should care about, the new function. I shouldn't have to care about a new switch case.
+  * I have to look at TWO places when I add new functionality, instead of the ONE place that I should care about, the new function.
+    * I shouldn't have to care about a new switch case.
 * It fails to take full advantage of C#'s Object Oriented Design.
   * We're not savages! We have dynamic dispatch!
 
