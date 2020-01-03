@@ -32,7 +32,6 @@ namespace Command_Library
     public abstract class VN_Command
     {
         public string name;
-        protected string command;
         public abstract void Call_Command(string args);
     }
     #endregion

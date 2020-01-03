@@ -52,7 +52,6 @@ Taking full advantage of C#, I created a CommandLibrary file that stores all new
 ```csharp
 public abstract class VN_Command {
     public string name;
-    protected string command;
     public abstract void Call_Command(string args);
 }
 
