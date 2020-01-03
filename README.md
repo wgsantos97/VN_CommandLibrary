@@ -50,6 +50,14 @@ Taking full advantage of C#, I created a CommandLibrary file that stores all new
 * Its own version of Call_Command which takes a string of arguments.
 
 ```csharp
+public abstract class VN_Command {
+    public string name;
+    protected string command;
+    public abstract void Call_Command(string args);
+}
+
+...
+
 public class Command_StopMusic : VN_Command {
     public Command_StopMusic() {
         name = "stopMusic";
