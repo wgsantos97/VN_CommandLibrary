@@ -49,6 +49,17 @@ Taking full advantage of C#, I created a CommandLibrary file that stores all new
 * A name for the function.
 * Its own version of Call_Command which takes a string of arguments.
 
+```csharp
+public class Command_StopMusic : VN_Command {
+    public Command_StopMusic() {
+        name = "stopMusic";
+    }
+    public override void Call_Command(string args) {
+        AudioManager.instance.PlaySong(null);
+    }
+}
+```
+
 Using Reflection, I find all non-abstract child classes of VN_Command. Then for each unique class I find, I instantiate it and add it to a dictionary where its name is the key and the value is the instance itself.
 
 ```csharp
